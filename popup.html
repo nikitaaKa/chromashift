@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chroma Shift</title>
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand-wrapper">
+        <img src="icons/icon48.png" alt="" class="brand-icon-img">
+        <div>
+          <div class="brand-title">CHROMA SHIFT</div>
+          <div class="brand-subtitle">ИНВЕРСИЯ ЦВЕТОВ</div>
+        </div>
+      </div>
+      <div id="status-badge" class="header-status-badge">ПРОВЕРКА</div>
+    </header>
+
+    <main class="section">
+      <div class="section-title">ТЕКУЩИЙ САЙТ</div>
+      <h1 id="host-label">Загрузка...</h1>
+
+      <button id="site-toggle" class="master-toggle-btn" type="button" role="switch" aria-checked="false" aria-labelledby="toggle-label" disabled>
+        <span class="btn-indicator" aria-hidden="true"></span>
+        <span id="toggle-label">ВКЛЮЧИТЬ ИНВЕРСИЮ</span>
+      </button>
+
+      <div class="status-line" aria-live="polite">
+        <span id="status-dot" class="status-dot" aria-hidden="true"></span>
+        <span id="status-label">Проверяем страницу</span>
+      </div>
+      <p id="help-text" class="help-text">Настройка сохраняется для этого домена.</p>
+    </main>
+
+  </body>
+</html>

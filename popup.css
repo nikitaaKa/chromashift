@@ -1,0 +1,222 @@
+:root {
+  color-scheme: dark;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --teal-primary: #00e5c0;
+  --teal-glow: rgba(0, 229, 192, 0.25);
+  --teal-hover: #00ffd5;
+  --teal-active: #00cca8;
+  --teal-border: #008775;
+  --danger-color: #ff4757;
+  --danger-bg: rgba(255, 71, 87, 0.15);
+  --bg-main: #0c1214;
+  --bg-card: #131c1f;
+  --bg-card-hover: #182428;
+  --border-subtle: #203137;
+  --text-primary: #e6f6f4;
+  --text-secondary: #8aa6a1;
+  --text-muted: #56736d;
+  font-family: var(--font-family);
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+body {
+  width: 360px;
+  min-height: 260px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--teal-primary);
+  background: var(--bg-card);
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon-img {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  border: 1px solid var(--teal-primary);
+}
+
+.brand-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.brand-subtitle {
+  margin-top: 2px;
+  color: var(--teal-primary);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.header-status-badge {
+  padding: 3px 8px;
+  border: 1px solid var(--teal-primary);
+  background: #112826;
+  color: var(--teal-primary);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.header-status-badge.disabled {
+  border-color: var(--danger-color);
+  background: var(--danger-bg);
+  color: var(--danger-color);
+}
+
+.section {
+  padding: 18px 16px 16px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 9px;
+  color: var(--teal-primary);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.section-title::after {
+  height: 1px;
+  flex: 1;
+  background: var(--border-subtle);
+  content: "";
+}
+
+h1 {
+  min-height: 22px;
+  margin: 0 0 14px;
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.master-toggle-btn {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--teal-primary);
+  outline: none;
+  background: var(--teal-primary);
+  box-shadow: 0 0 12px var(--teal-glow);
+  color: #0c1214;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: background-color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
+}
+
+.master-toggle-btn:hover:not(:disabled) {
+  background: var(--teal-hover);
+  box-shadow: 0 0 18px var(--teal-glow);
+}
+
+.master-toggle-btn:active:not(:disabled) {
+  background: var(--teal-active);
+  transform: translateY(1px);
+}
+
+.master-toggle-btn:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
+}
+
+.master-toggle-btn.btn-disabled,
+.master-toggle-btn:disabled {
+  border-color: var(--border-subtle);
+  background: var(--bg-card);
+  box-shadow: none;
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.master-toggle-btn.btn-disabled:hover {
+  border-color: var(--teal-border);
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.btn-indicator {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  background: #0c1214;
+}
+
+.master-toggle-btn.btn-disabled .btn-indicator,
+.master-toggle-btn:disabled .btn-indicator {
+  background: var(--danger-color);
+}
+
+.status-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  background: var(--text-muted);
+}
+
+.status-dot.is-active {
+  background: var(--teal-primary);
+  box-shadow: 0 0 8px var(--teal-glow);
+}
+
+.help-text {
+  margin: 7px 0 0 15px;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
